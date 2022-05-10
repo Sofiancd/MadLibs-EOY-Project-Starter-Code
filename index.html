@@ -4093,12 +4093,13 @@ button {
     <body>
         <div class="stories-ticker">
             <h2>Stories Created:<span class="count"></span></h2>
+             <p class="counter-display"> Counter: </p>
         </div>
         <h1> MadLibs with JavaScript!</h1>
         <div class="directions-container">
             <h3>Fill in each blank with a word that fits the prompt. Then scroll down and see the story you've created!</h3>
             <p>1. Person's name:<input class="persons-name"></p>
-            <p>2. Type of transportation:<input class="type of transport"></p>
+            <p>2. Type of transportation:<input class="type-of-transport"></p>
             <p>3. Adjective (a word that describes something):<input class="adjective"></p>
             <p>4. Number:<input class="number"></p>
              <br>
@@ -4110,16 +4111,18 @@ button {
     
 <script>
 /*__POPCODESTART__*/
-var storiesCreated;
+var counter = 0;
 $("button").click(function () {
   var name = $(".persons-name").val();
   console.log(name);
-  var transport = $(".type-of-transport").val();
-  console.log(transport);
+  var transportation = $(".type-of-transport").val();
+  console.log(transportation);
   var adjective = $(".adjective").val();
   console.log(adjective);
-  var time = $(".number").val();
-  console.log(time);
-  $(".story").append("One day my friend " + name + " and I decided to take a trip to the beach, so we packed our bags and took the " + transport + "over.It was a" + adjective + "day at the beach! We ended up staying for" + time + "hours!");
+  var number = $(".number").val();
+  console.log(number);
+  $(".story").append("One day my friend " + name + " and I decided to take a trip to the beach, so we packed our bags and took the " + transportation + "over.It was a " + adjective + " day at the beach! We ended up staying for " + number + " hours!");
+  counter = counter + 1;
+  $(".counter-display").text("Counter: " + counter);
 });
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbInN0b3JpZXNDcmVhdGVkIiwiJCIsImNsaWNrIiwibmFtZSIsInZhbCIsImNvbnNvbGUiLCJsb2ciLCJ0cmFuc3BvcnQiLCJhZGplY3RpdmUiLCJ0aW1lIiwiYXBwZW5kIl0sIm1hcHBpbmdzIjoiQUFBQSxJQUFJQSxjQUFKO0FBQ0FDLENBQUMsQ0FBQyxRQUFELENBQUQsQ0FBWUMsS0FBWixDQUFrQixZQUFXO0FBQ3pCLE1BQUlDLElBQUksR0FBR0YsQ0FBQyxDQUFDLGVBQUQsQ0FBRCxDQUFtQkcsR0FBbkIsRUFBWDtBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWUgsSUFBWjtBQUNBLE1BQUlJLFNBQVMsR0FBR04sQ0FBQyxDQUFDLG9CQUFELENBQUQsQ0FBd0JHLEdBQXhCLEVBQWhCO0FBQ0FDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZQyxTQUFaO0FBQ0EsTUFBSUMsU0FBUyxHQUFHUCxDQUFDLENBQUMsWUFBRCxDQUFELENBQWdCRyxHQUFoQixFQUFoQjtBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWUUsU0FBWjtBQUNBLE1BQUlDLElBQUksR0FBR1IsQ0FBQyxDQUFDLFNBQUQsQ0FBRCxDQUFhRyxHQUFiLEVBQVg7QUFDQUMsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVlHLElBQVo7QUFDQVIsRUFBQUEsQ0FBQyxDQUFDLFFBQUQsQ0FBRCxDQUFZUyxNQUFaLENBQW1CLHVCQUFxQlAsSUFBckIsR0FBMEIsaUZBQTFCLEdBQTRHSSxTQUE1RyxHQUFzSCxlQUF0SCxHQUFzSUMsU0FBdEksR0FBZ0osMkNBQWhKLEdBQTRMQyxJQUE1TCxHQUFpTSxRQUFwTjtBQUNILENBVkQiLCJzb3VyY2VzQ29udGVudCI6WyJsZXQgc3Rvcmllc0NyZWF0ZWQ7XG4kKFwiYnV0dG9uXCIpLmNsaWNrKGZ1bmN0aW9uKCkge1xuICAgIGxldCBuYW1lID0gJChcIi5wZXJzb25zLW5hbWVcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2cobmFtZSk7XG4gICAgbGV0IHRyYW5zcG9ydCA9ICQoXCIudHlwZS1vZi10cmFuc3BvcnRcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2codHJhbnNwb3J0KTtcbiAgICBsZXQgYWRqZWN0aXZlID0gJChcIi5hZGplY3RpdmVcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2coYWRqZWN0aXZlKTtcbiAgICBsZXQgdGltZSA9ICQoXCIubnVtYmVyXCIpLnZhbCgpO1xuICAgIGNvbnNvbGUubG9nKHRpbWUpO1xuICAgICQoXCIuc3RvcnlcIikuYXBwZW5kKFwiT25lIGRheSBteSBmcmllbmQgXCIrbmFtZStcIiBhbmQgSSBkZWNpZGVkIHRvIHRha2UgYSB0cmlwIHRvIHRoZSBiZWFjaCwgc28gd2UgcGFja2VkIG91ciBiYWdzIGFuZCB0b29rIHRoZSBcIit0cmFuc3BvcnQrXCJvdmVyLkl0IHdhcyBhXCIrYWRqZWN0aXZlK1wiZGF5IGF0IHRoZSBiZWFjaCEgV2UgZW5kZWQgdXAgc3RheWluZyBmb3JcIit0aW1lK1wiaG91cnMhXCIpO1xufSk7Il19</script></body></html>
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImNvdW50ZXIiLCIkIiwiY2xpY2siLCJuYW1lIiwidmFsIiwiY29uc29sZSIsImxvZyIsInRyYW5zcG9ydGF0aW9uIiwiYWRqZWN0aXZlIiwibnVtYmVyIiwiYXBwZW5kIiwidGV4dCJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsT0FBTyxHQUFDLENBQVo7QUFDQUMsQ0FBQyxDQUFDLFFBQUQsQ0FBRCxDQUFZQyxLQUFaLENBQWtCLFlBQVc7QUFDekIsTUFBSUMsSUFBSSxHQUFHRixDQUFDLENBQUMsZUFBRCxDQUFELENBQW1CRyxHQUFuQixFQUFYO0FBQ0FDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZSCxJQUFaO0FBQ0EsTUFBSUksY0FBYyxHQUFHTixDQUFDLENBQUMsb0JBQUQsQ0FBRCxDQUF3QkcsR0FBeEIsRUFBckI7QUFDQUMsRUFBQUEsT0FBTyxDQUFDQyxHQUFSLENBQVlDLGNBQVo7QUFDQSxNQUFJQyxTQUFTLEdBQUdQLENBQUMsQ0FBQyxZQUFELENBQUQsQ0FBZ0JHLEdBQWhCLEVBQWhCO0FBQ0FDLEVBQUFBLE9BQU8sQ0FBQ0MsR0FBUixDQUFZRSxTQUFaO0FBQ0EsTUFBSUMsTUFBTSxHQUFHUixDQUFDLENBQUMsU0FBRCxDQUFELENBQWFHLEdBQWIsRUFBYjtBQUNBQyxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWUcsTUFBWjtBQUNBUixFQUFBQSxDQUFDLENBQUMsUUFBRCxDQUFELENBQVlTLE1BQVosQ0FBbUIsdUJBQXFCUCxJQUFyQixHQUEwQixpRkFBMUIsR0FBNEdJLGNBQTVHLEdBQTJILGdCQUEzSCxHQUE0SUMsU0FBNUksR0FBc0osNkNBQXRKLEdBQW9NQyxNQUFwTSxHQUEyTSxTQUE5TjtBQUNBVCxFQUFBQSxPQUFPLEdBQUVBLE9BQU8sR0FBRyxDQUFuQjtBQUNDQyxFQUFBQSxDQUFDLENBQUMsa0JBQUQsQ0FBRCxDQUFzQlUsSUFBdEIsQ0FBMkIsY0FBYVgsT0FBeEM7QUFDSixDQVpEIiwic291cmNlc0NvbnRlbnQiOlsibGV0IGNvdW50ZXI9MDtcbiQoXCJidXR0b25cIikuY2xpY2soZnVuY3Rpb24oKSB7XG4gICAgbGV0IG5hbWUgPSAkKFwiLnBlcnNvbnMtbmFtZVwiKS52YWwoKTtcbiAgICBjb25zb2xlLmxvZyhuYW1lKTtcbiAgICBsZXQgdHJhbnNwb3J0YXRpb24gPSAkKFwiLnR5cGUtb2YtdHJhbnNwb3J0XCIpLnZhbCgpO1xuICAgIGNvbnNvbGUubG9nKHRyYW5zcG9ydGF0aW9uKTtcbiAgICBsZXQgYWRqZWN0aXZlID0gJChcIi5hZGplY3RpdmVcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2coYWRqZWN0aXZlKTtcbiAgICBsZXQgbnVtYmVyID0gJChcIi5udW1iZXJcIikudmFsKCk7XG4gICAgY29uc29sZS5sb2cobnVtYmVyKTtcbiAgICAkKFwiLnN0b3J5XCIpLmFwcGVuZChcIk9uZSBkYXkgbXkgZnJpZW5kIFwiK25hbWUrXCIgYW5kIEkgZGVjaWRlZCB0byB0YWtlIGEgdHJpcCB0byB0aGUgYmVhY2gsIHNvIHdlIHBhY2tlZCBvdXIgYmFncyBhbmQgdG9vayB0aGUgXCIrdHJhbnNwb3J0YXRpb24rXCJvdmVyLkl0IHdhcyBhIFwiK2FkamVjdGl2ZStcIiBkYXkgYXQgdGhlIGJlYWNoISBXZSBlbmRlZCB1cCBzdGF5aW5nIGZvciBcIitudW1iZXIrXCIgaG91cnMhXCIpO1xuICAgIGNvdW50ZXI9IGNvdW50ZXIgKyAxO1xuICAgICAkKFwiLmNvdW50ZXItZGlzcGxheVwiKS50ZXh0KFwiQ291bnRlcjogXCIrIGNvdW50ZXIpO1xufSk7Il19</script></body></html>
